@@ -1,7 +1,7 @@
 class CreateWeapons < ActiveRecord::Migration[5.2]
   def change
     create_table :weapons do |t|
-      t.extra :t.string
+      t.string :extra
 
       t.integer :dabi
       t.integer :roano
