@@ -1,1 +1,35 @@
-Home
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">간단하게 확인하기</h1>
+    <p class="lead">로그인하지 않고, 간편하게 확인할 수 있으나, 여러개를 확인할 수 없으며, 정보가 저장되지는 않습니다.</p>
+    <form class="form-inline" action="/simple_result_controller" method="POST">
+      <select class="custom-select my-1 mr-sm-2" name="characters">
+        <option selected>캐릭터</option>
+        <%= @monsters.each do |m| %>
+        <option value="<%= m %>"><%= m %></option>
+        <% end %>
+      </select>
+      <select class="custom-select my-1 mr-sm-2" name="parts">
+        <option selected>부위</option>
+        <option value="weapon">무기</option>
+        <option value="guard">방어구</option>
+        <option value="necklace">목걸이</option>
+        <option value="ring">반지</option>
+        <option value="staminabead">보주</option>
+      </select>
+      <select class="custom-select my-1 mr-sm-2" name="levels">
+        <option selected>레벨</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+      </select>
+      <input type="hidden" value="<%= form_authenticity_token() %>" name="authenticity_token"/>
+      <button type="submit" class="btn btn-primary my-1">확인</button>
+    </form>
+  </div>
+</div>
+
+
+<%= @monsters %>
