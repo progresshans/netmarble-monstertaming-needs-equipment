@@ -1,0 +1,2 @@
+class Staminabead < ApplicationRecord
+end
