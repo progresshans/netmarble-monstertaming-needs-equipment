@@ -15,7 +15,28 @@ class HomeController < ApplicationController
       "miller", "garen", "anna", "chino", "silvia", "ceok", "eren", "wi", "bibian", "seahorseleader", "india", "mina", "rilliana", "hwarang", "parao",
       "fllea", "keyboardwarriora", "deepredmoon", "kralisa", "rabiel", "andreas", "graphite", "fausutu", "misha", "rael", "darel", "kaiyhan", "ran",
       "boni", "sera", "mika", "roksannue", "kloud", "verna", "angel", "violle", "erica"]
-    @monsters = @monsters_eng[@monsters_arr_num]
+    @monster = @monsters_eng[@monsters_arr_num].to_s
+    @part = params[:parts]
+    @level = params[:levels]
+    @modelcheck = Guard.all
+
+
+    if "@part" == "weapons"
+
+
+    elsif "@part" == "guard"
+      @needspartsay = Guard.('@monster').include?('@level')
+    elsif "@part" == "necklace"
+
+    elsif "@part" == "ring"
+
+    elsif "@part" == "staminabead"
+
+    else
+
+    end
+
+
   end
 
   def simple_result
